@@ -8,6 +8,7 @@
 #include "GradientDescent.hpp"
 using json = nlohmann::json;
 int main(){
+    //Accessing data 
     std::ifstream fdata("data.json");
     json data = json::parse(fdata);
     //standard input parameters
@@ -21,15 +22,11 @@ int main(){
     std::string expr = data["fun"];
     std::vector<std::string> expr_v = data["dfun"];
     std::vector<double> initial_x = data["initial"];
-    //
+    //Initializing the parsers
     FunctionWrap f(expr,initial_x.size());
     MultFunctionWrap df(expr_v,initial_x.size());
-    ///////////////////////////////////////////////////////////////////
+    //Gradient Descent
     std::vector<double> x_min = GradientDescent(initial_x, max_it, tol_df, tol_x, f, df, alpha0, decayParameter, learningMethod);
-
     std::cout << x_min[0] << " " << x_min[1] << std::endl;
-
-
-
     return 0;
 }
