@@ -9,8 +9,10 @@ private:
     std::vector<double> inputs;
     mu::Parser function_parser;
 public:
+    //Constructors
     FunctionWrap(const std::string & expr, size_t size);
     FunctionWrap(const FunctionWrap & f1);
+    //Evaluation Operator
     double operator()(const std::vector<double> &x);
 };
 #endif //CHALLENGE1PACS_FUNCTIONWRAP_HPP
