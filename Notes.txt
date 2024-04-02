@@ -1,0 +1,11 @@
+README should explain what is inside the code and how to modify the file containing the parameters and the method choice.
+
+Some suggestions:
+    - group the header and source files in an include and a source foalder;
+    - use a struct to contain all the optimization parameters;
+    - rely on methods of the std library for the implementation of vector operations and replace all the for loops;
+    - try implementation with function templates to choose the strategy for the computation of the learning rate;
+    - add a check on the validity of the parameter indicating the chosen strategy.
+
+
+The code is readable and correct, the comments are clear.
